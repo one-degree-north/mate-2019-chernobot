@@ -1,7 +1,7 @@
 #!/bin/bash
 # 
 # Copyright (c) 2019 Gary Kim <gary@garykim.dev>
-# Licensed under MIT License
+# Licensed under GPL-3.0-only License
 #
 # Easily run this script by running 
 # `curl -sSL --output chernobotinstaller.sh https://raw.githubusercontent.com/sas-mate-robotics/chernobot/master/install.sh && grep '#!/bin/bash' chernobotinstaller.sh > /dev/null && bash ./chernobotinstaller.sh dl`

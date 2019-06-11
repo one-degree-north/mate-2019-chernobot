@@ -41,5 +41,17 @@ Add: Documentation, containing an algo. desc. and a data flow diagram.
 
 Functionality that would be nice to implement:
 - Something with parallax, accelerometry, and length measurement.
-- 
-- 
+
+### License
+
+Relicensed to [GPL-3.0-only](/LICENSE)
+
+* Copyright © 2018-2019 Aaron Yeoh Cruz
+
+* Copyright © 2019 Gary Kim &lt;<gary@garykim.dev>&gt;
+
+Originally licensed under [MIT](/OLDLICENSE): 
+
+Copyright © 2018-2019 Aaron Yeoh Cruz
+
+<https://github.com/hyperum/chernobot>
