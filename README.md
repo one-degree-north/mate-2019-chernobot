@@ -4,6 +4,14 @@ A one-size-fits-all program for Singapore American School's MATE program, writte
 
 ## Getting Started
 
+### Automatic Script
+
+If you are on a macOS, Ubuntu, or Ubuntu like system, you can run the following command to automatically install chernobot. The following script will automatically check dependencies, install or prompt to install missing dependencies, compile the program.
+
+```
+curl -sSL --output chernobotinstaller.sh https://raw.githubusercontent.com/sas-mate-robotics/chernobot/master/install.sh && grep '#!/bin/bash' chernobotinstaller.sh > /dev/null && bash ./chernobotinstaller.sh dl
+```
+
 ### macOS
 
 You'll need the latest version of Clang for C++17, SDL2, Ninja (optional), CMake, and various other tools.
