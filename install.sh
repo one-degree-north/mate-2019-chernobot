@@ -14,14 +14,18 @@ if [[ "$OSTYPE" == "darwin" ]]; then
 
     echo -e 'Detected Darwin (macOS) OS\n'
     
-    # Check if c++ compiler is installed
-    type c++ > /dev/null || echo -e 'There is no C++ compiler avaliable on your computer.\nIf you would like to install one, run this command\nxcode-select --install\nthen rerun this script\n' && exit 1
+    
+    # # Check if c++ compiler is installed
+    # type c++ > /dev/null || echo -e 'There is no C++ compiler avaliable on your computer.\nIf you would like to install one, run this command\nxcode-select --install\nthen rerun this script\n' && exit 1
 
     # Check if Homebrew is installed
     type brew > /dev/null || echo -e 'Homebrew is not installed\nIf you would like to install it, run this command\n/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"\nthen rerun this script.\n' && exit 1
 
-    # Check if git is avaliable
-    type git > /dev/null || echo -e 'Git is not installed\nIf you would like to install it, run this command\nbrew install git\nthen rerun this script.\n' && exit 1
+    # # Check if git is avaliable
+    # type git > /dev/null || echo -e 'Git is not installed\nIf you would like to install it, run this command\nbrew install git\nthen rerun this script.\n' && exit 1
+
+    # Check if XCode developer tools are installed.
+    xcode-select -p || echo -e 'XCode Developer tools are not installed. Please run this command\nxcode-select --install\nthen rerun this script\n' && exit 1
 
     if [[ "$1" == "dl" ]] || [[ "$1" == "download" ]]; then
         git clone --recursive https://github.com/sas-mate-robotics/chernobot.git chernobot
@@ -91,4 +95,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
 else
     echo -e "OS not recognized\n"
+    
+    exit 1
 fi

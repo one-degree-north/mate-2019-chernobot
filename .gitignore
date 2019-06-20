@@ -4,3 +4,5 @@ CMakeCache.txt
 imgui.ini
 CMakeFiles
 chernobot
+Makefile
+*.cmake
