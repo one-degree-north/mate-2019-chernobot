@@ -1,0 +1,13 @@
+kind: pipeline
+name: build
+
+steps:
+  - name: submodules
+    image: docker:git
+    commands:
+      - git submodule update --init --recursive
+  - name: build-script
+    image: ubuntu:18.04
+    commands:
+      - apt update && DEBIAN_FRONTEND=noninteractive apt install -y cmake ninja-build libsdl2-dev libopencv* libavdevice-dev
+      - bash ./install.sh
