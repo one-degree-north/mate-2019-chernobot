@@ -1,8 +1,15 @@
-tmp/
-CMakeCache.txt
+# IDE
 .vscode/
-imgui.ini
-CMakeFiles
+.idea/
+
+# Build
+CMakeFiles/
 chernobot
+chernobot.*
+CMakeCache.txt
+tmp/
 Makefile
 *.cmake
+
+# Run
+imgui.ini
