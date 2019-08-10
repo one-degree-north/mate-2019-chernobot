@@ -8,7 +8,7 @@
 
 set -e
 
-if [[ "$OSTYPE" == "darwin" ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
     # Fix XCode command line tools install check
     # Do not check
 
@@ -19,13 +19,16 @@ if [[ "$OSTYPE" == "darwin" ]]; then
     # type c++ > /dev/null || echo -e 'There is no C++ compiler avaliable on your computer.\nIf you would like to install one, run this command\nxcode-select --install\nthen rerun this script\n' && exit 1
 
     # Check if Homebrew is installed
-    type brew > /dev/null || echo -e 'Homebrew is not installed\nIf you would like to install it, run this command\n/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"\nthen rerun this script.\n' && exit 1
+    hash brew > /dev/null || (echo -e 'Homebrew is not installed\nIf you would like to install it, run this command\n/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"\nthen rerun this script.\n' && exit 1)
+    echo 'Homebrew detected'
 
     # # Check if git is avaliable
     # type git > /dev/null || echo -e 'Git is not installed\nIf you would like to install it, run this command\nbrew install git\nthen rerun this script.\n' && exit 1
 
     # Check if XCode developer tools are installed.
-    xcode-select -p || echo -e 'XCode Developer tools are not installed. Please run this command\nxcode-select --install\nthen rerun this script\n' && exit 1
+    xcode-select -p || (echo -e 'XCode Developer tools are not installed. Please run this command\nxcode-select --install\nthen rerun this script\n' && exit 1)
+
+    echo -e 'XCode Developer Tools detected'
 
     if [[ "$1" == "dl" ]] || [[ "$1" == "download" ]]; then
         git clone --recursive https://github.com/sas-mate-robotics/chernobot.git chernobot

@@ -3,8 +3,6 @@ sudo: required
 matrix:
   include:
     - dist: bionic
-      before_install:
-        - sudo apt-get update && sudo apt-get install -y cmake ninja-build libsdl2-dev libopencv* libavdevice-dev
     - os: osx
       osx_image: xcode10.2
       addons:
@@ -15,13 +13,9 @@ matrix:
             - cmake
             - opencv
           update: true
+      script:
+        - ./install.sh update
 install:
   eval "${MATRIX_EVAL}"
 script:
-  - PROJECT_ROOT=pwd
-  - cat CMakeLists.txt
-  - mkdir -p tmp
-  - cd tmp
-  - cmake -G Ninja ..
-  - ninja install
-  - cd ..
+  - ./install.sh dl
