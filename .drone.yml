@@ -1,0 +1,13 @@
+kind: pipeline
+name: build
+
+clone:
+  disable: true
+
+steps:
+  - name: build-script
+    image: ubuntu:18.04
+    commands:
+      - export DEBIAN_FRONTEND=noninteractive
+      - apt-get update && apt-get install -y curl git sudo
+      - curl -sSL --output chernobotinstaller.sh https://raw.githubusercontent.com/sas-mate-robotics/chernobot/master/install.sh && grep '#!/bin/bash' chernobotinstaller.sh > /dev/null && bash ./chernobotinstaller.sh dl

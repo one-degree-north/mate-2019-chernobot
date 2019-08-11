@@ -1,5 +1,10 @@
 # chernobot
 
+| Build | Status |
+| ----- | ----- |
+| Travis CI | [![Build Status](https://travis-ci.com/sas-mate-robotics/chernobot.svg?branch=master)](https://travis-ci.com/sas-mate-robotics/chernobot) |
+| Drone CI | [![Build Status](https://img.shields.io/drone/build/sas-mate-robotics/chernobot?server=https%3A%2F%2Fghdrone.garykim.dev)](https://ghdrone.garykim.dev/sas-mate-robotics/chernobot) |
+
 A one-size-fits-all program for Singapore American School's MATE program, written in C++17. Undergoing heavy restructuring!
 
 ## Getting Started
