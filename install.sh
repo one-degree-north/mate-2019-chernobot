@@ -70,7 +70,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [[ "$1" == "dl" ]] || [[ "$1" == "download" ]]; then
         git clone --recursive https://github.com/sas-mate-robotics/chernobot.git chernobot
         cd chernobot
-        sudo apt update && sudo apt install -y cmake ninja-build libsdl2-dev libopencv* libavdevice-dev
+        sudo -E apt update && sudo -E apt install -y cmake ninja-build libsdl2-dev libopencv* libavdevice-dev
         mkdir -p tmp
         cd tmp
         cmake -G Ninja ..
