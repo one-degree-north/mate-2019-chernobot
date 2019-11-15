@@ -43,11 +43,6 @@ public:
 		return joy;
 	}
 
-	std::string directreturn (std::string in)
-	{
-		return in;
-	}
-
 	ControlMapping get_mapping (int id)
 	{
 		assert(joy_mappings.size() > 0);
